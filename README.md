@@ -9,7 +9,7 @@
 - [ ] mobx              // 新一代状态管理库
 - [ ] react-router4     // 路由即组件
 - [ ] ant-design        // 阿里出品的组件库
-- [ ] styled-component  // css in js
+- [x] styled-components  // css in js
 - [x] perttier          // 文件格式化
 - [x] lint-staged       // precommit
 - [x] tslint            // lint for typescript
