@@ -10,10 +10,10 @@
 - [ ] react-router4     // 路由即组件
 - [ ] ant-design        // 阿里出品的组件库
 - [ ] styled-component  // css in js
-- [ ] perttier          // 文件格式化
-- [ ] lint-staged       // precommit
-- [ ] tslint            // lint for typescript
-- [ ] styleline         // lint css/scss
+- [x] perttier          // 文件格式化
+- [x] lint-staged       // precommit
+- [x] tslint            // lint for typescript
+- [x] styleline         // lint css/scss
 - [ ] typedoc           
 - [ ] Jest            
 - [ ] mock
