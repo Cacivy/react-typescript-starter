@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
+    "start": "cross-env NODE_ENV='development' node scripts/start.js",
+    "build": "cross-env NODE_ENV='production' node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "styleint": "stylelint src/**/*.(css|scss) --fix",
     "precommit": "lint-staged"
@@ -60,6 +60,7 @@
     "@types/node": "^9.4.7",
     "@types/react": "^16.0.40",
     "@types/react-dom": "^16.0.4",
+    "cross-env": "^5.1.4",
     "lint-staged": "^7.0.0",
     "prettier": "^1.11.1",
     "styled-components": "^3.2.1",

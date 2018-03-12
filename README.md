@@ -17,15 +17,16 @@
 - [ ] typedoc           
 - [x] Jest            
 - [ ] mock
-- [ ] PWA
+- [x] PWA
 - [x] alias
+- [x] HMR
 
 ### webpack
 
 - [ ] scss/postcss
 - [ ] IgnorePlugin
 - [ ] ExtractTextPlugin   // 提取css样式文件
-- [ ] DllReferencePlugin  // 抽离公共库 
+- [ ] DllReferencePlugin  // 抽离公共库
 
 ### 开发环境
 

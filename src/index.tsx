@@ -20,3 +20,9 @@ ReactDOM.render(
 </Provider>, 
 document.getElementById('root') as HTMLElement)
 registerServiceWorker()
+
+if (process.env.NODE_ENV === 'development') {
+  if (module.hot) {
+    module.hot.accept()
+  }
+}
