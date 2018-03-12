@@ -1,9 +1,15 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
+import { Logo } from 'components'
+import { inject } from 'mobx-react';
+import { IUser } from 'store'
 
-const logo = require('./logo.svg');
+interface AppProps {
+  userStore?: IUser
+}
 
-class App extends React.Component {
+@inject('userStore')
+class App extends React.Component<AppProps> {
   render() {
     const AppContainer = styled.div`
       text-align: center;
@@ -14,19 +20,7 @@ class App extends React.Component {
       padding: 20px;
       color: white;
     `
-    const rotate360 = keyframes`
-      from {
-        transform: rotate(0deg);
-      }
-    
-      to {
-        transform: rotate(360deg);
-      }
-    `
-    const AppLogo = styled.img`
-      animation: ${rotate360} infinite 20s linear;
-      height: 80px;
-    `
+
     const AppTitle = styled.h1`
       font-size: 1.5em;
     `
@@ -34,18 +28,20 @@ class App extends React.Component {
       font-size: large;
     `
 
+    const { username } = this.props.userStore! 
+
     return (
       <AppContainer>
         <AppHeader>
-          <AppLogo src={logo} alt="logo" />
-          <AppTitle>Welcome to React</AppTitle>
+          <Logo />
+          <AppTitle>Welcome to React, {username}</AppTitle>
         </AppHeader>
         <AppIntro>
           To get started, edit <code>src/App.tsx</code> and save to reload.
         </AppIntro>
       </AppContainer>
-    );
+    )
   }
 }
 
-export default App;
+export default App

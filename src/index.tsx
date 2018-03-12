@@ -1,9 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
-import { injectGlobal } from 'styled-components';
-
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { App } from './pages'
+import registerServiceWorker from './registerServiceWorker'
+import { injectGlobal } from 'styled-components'
+import { Provider } from 'mobx-react'
+import { userStore } from 'store'
 
 injectGlobal`
   body {
@@ -14,7 +15,8 @@ injectGlobal`
 `
 
 ReactDOM.render(
-  <App /> as any,
-  document.getElementById('root') as HTMLElement
-);
-registerServiceWorker();
+<Provider userStore={userStore}>
+  <App />
+</Provider>, 
+document.getElementById('root') as HTMLElement)
+registerServiceWorker()
