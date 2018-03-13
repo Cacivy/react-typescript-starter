@@ -1,6 +1,6 @@
 # 基于React+Typescript构建的脚手架
 
-> 本项目基于[TypeScript-React-Starter](https://github.com/Microsoft/TypeScript-React-Starter)
+> 🚀本项目基于[TypeScript-React-Starter](https://github.com/Microsoft/TypeScript-React-Starter)
 
 ### 技术栈
 
@@ -24,7 +24,7 @@
 ### webpack
 
 - [ ] 4.0
-- [ ] scss/postcss
+- [x] postcss             // 不支持styled-component💔
 - [ ] IgnorePlugin
 - [ ] ExtractTextPlugin   // 提取css样式文件
 - [ ] DllReferencePlugin  // 抽离公共库

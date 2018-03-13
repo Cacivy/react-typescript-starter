@@ -22,7 +22,7 @@ class App extends React.Component<AppProps> {
     `
 
     const AppTitle = styled.h1`
-      font-size: 1.5em;
+      font-size: 15px;
     `
     const AppIntro = styled.p`
       font-size: large;

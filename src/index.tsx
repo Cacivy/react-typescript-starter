@@ -5,6 +5,10 @@ import registerServiceWorker from './registerServiceWorker'
 import { injectGlobal } from 'styled-components'
 import { Provider } from 'mobx-react'
 import { userStore } from 'store'
+import viewport from './utils/viewport'
+import './index.css'
+
+viewport()
 
 injectGlobal`
   body {
