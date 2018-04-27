@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { App } from './pages'
 import registerServiceWorker from './registerServiceWorker'
 import { injectGlobal } from 'styled-components'
 import { Provider } from 'mobx-react'
 import { userStore } from 'store'
 import viewport from './utils/viewport'
+import Router from './router'
 import './index.css'
 
 viewport()
@@ -20,7 +20,7 @@ injectGlobal`
 
 ReactDOM.render(
 <Provider userStore={userStore}>
-  <App />
+  <Router />
 </Provider>, 
 document.getElementById('root') as HTMLElement)
 registerServiceWorker()

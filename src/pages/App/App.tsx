@@ -5,6 +5,7 @@ import { inject, observer } from 'mobx-react'
 import { observable } from 'mobx'
 import { IUser } from 'store'
 import { Button } from 'antd'
+import { Link } from 'react-router-dom'
 
 interface AppProps {
   userStore?: IUser
@@ -50,6 +51,9 @@ class App extends React.Component<AppProps> {
           <p>
             To get started, edit <code>src/App.tsx</code> and save to reload.
           </p>
+          <Link to="/dashboard">
+            <Button>dashboard</Button>
+          </Link>
           <Button size="large" type="primary" onClick={this.onClick}>
             click me
           </Button>
