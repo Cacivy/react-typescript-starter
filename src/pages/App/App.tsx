@@ -1,15 +1,24 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Logo } from 'components'
-import { inject } from 'mobx-react';
+import { inject, observer } from 'mobx-react'
+import { observable } from 'mobx'
 import { IUser } from 'store'
+import { Button } from 'antd'
 
 interface AppProps {
   userStore?: IUser
 }
 
 @inject('userStore')
+@observer
 class App extends React.Component<AppProps> {
+  @observable count: number = 0
+
+  onClick = () => {
+    ++this.count
+  }
+
   render() {
     const AppContainer = styled.div`
       text-align: center;
@@ -23,12 +32,13 @@ class App extends React.Component<AppProps> {
 
     const AppTitle = styled.h1`
       font-size: 15px;
+      color: #fff;
     `
     const AppIntro = styled.p`
-      font-size: large;
+      font-size: 16px;
     `
 
-    const { username } = this.props.userStore! 
+    const { username } = this.props.userStore!
 
     return (
       <AppContainer>
@@ -37,7 +47,13 @@ class App extends React.Component<AppProps> {
           <AppTitle>Welcome to React, {username}</AppTitle>
         </AppHeader>
         <AppIntro>
-          To get started, edit <code>src/App.tsx</code> and save to reload.
+          <p>
+            To get started, edit <code>src/App.tsx</code> and save to reload.
+          </p>
+          <Button size="large" type="primary" onClick={this.onClick}>
+            click me
+          </Button>
+          <span>click count {this.count}</span>
         </AppIntro>
       </AppContainer>
     )

@@ -14,6 +14,7 @@ const paths = require('./paths')
 const getClientEnvironment = require('./env')
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
+const tsImportPluginFactory = require('ts-import-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 // Webpack uses `publicPath` to determine where the app is being served from.
@@ -157,7 +158,13 @@ let webpackConfig = {
                 loader: require.resolve('ts-loader'),
                 options: {
                   // disable type checker - we will use it in fork plugin
-                  transpileOnly: true
+                  transpileOnly: true,
+                  getCustomTransformers: () => ({
+                    before: [tsImportPluginFactory({
+                      libraryName: "antd",
+                      style: "css"
+                    })]
+                  })
                 }
               }
             ]

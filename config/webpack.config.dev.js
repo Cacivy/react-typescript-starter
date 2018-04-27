@@ -13,6 +13,7 @@ const getClientEnvironment = require('./env');
 const paths = require('./paths');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const pxtorem = require('postcss-pxtorem');
+const tsImportPluginFactory = require('ts-import-plugin')
 
 
 // Webpack uses `publicPath` to determine where the app is being served from.
@@ -156,7 +157,13 @@ module.exports = {
                 options: {
                   // disable type checker - we will use it in fork plugin
                   transpileOnly: true,
-                },
+                  getCustomTransformers: () => ({
+                    before: [tsImportPluginFactory({
+                      libraryName: "antd",
+                      style: "css"
+                    })]
+                  })
+                }
               },
             ],
           },
