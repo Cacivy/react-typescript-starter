@@ -7,16 +7,16 @@
 - [x] react@16.2
 - [x] typescript@2.7.2
 - [x] **mobx** 新一代状态管理库
-- [ ] **react-router4** 路由即组件
+- [ ] **react-router4** 组件即路由
 - [ ] **ant-design**  阿里出品的组件库
 - [x] **styled-components** css in js
 - [x] **perttie** 文件格式化
 - [x] **lint-staged** precommit
 - [x] **tslint** lint for typescript
 - [x] **styleline** lint css/scss
-- [ ] **typedoc** 生成ts文档
+- [x] **typedoc** 生成ts文档
 - [x] **Jest Enzyme** & sinon
-- [ ] **mock** json-server & faker.js
+- [x] **mock** json-server & faker.js
 - [x] **PWA**
 - [x] **HMR**
 
