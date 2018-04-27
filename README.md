@@ -24,9 +24,9 @@
 
 - [ ] **Future** 升级4.0,实现零配置
 - [x] **postcss** 不支持styled-component💔
-- [ ] **IgnorePlugin** 忽略语言包等
-- [ ] **ExtractTextPlugin** 提取css样式文件
-- [ ] **DllReferencePlugin** 抽离公共库
+- [x] **IgnorePlugin** 忽略语言包等
+- [x] **ExtractTextPlugin** 提取css样式文件
+- [x] **DllReferencePlugin** 抽离公共库
 
 ### 开发环境
 
@@ -34,4 +34,33 @@
 + 命令行工具 cmder + ubuntu bash
 + 部署 webhook/docker
 
-> 推荐配合[nestjs](https://github.com/Cacivy/nest-graphql)使用，可以方便的搭建REST/GarphQL API Server
+> 后端推荐配合[nestjs](https://github.com/Cacivy/nest-graphql)使用，可以方便的搭建REST/GarphQL API Server
+
+### DEV
+
+```
+// 启动项目
+yarn start 
+
+// 打包
+yarn build
+
+// 查看包分析工具
+yarn build:analyzer
+
+//打包第三方库dll
+yarn build:dll
+
+// 测试
+yarn test
+
+// 测试覆盖率
+yarn test:coverage
+
+// 启动mock服务
+yarn mock
+
+// 生成typedoc并打开
+yarn typedoc
+
+```
